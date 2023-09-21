@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import VehicleList from './vehicle/VehicleList';
+import EquipmentList from './equipment/EquipmentList';
+import vehiclesData from './vehicles.json'; // Import vehicle data
+import equipmentsData from './equipments.json'; // Import equipment data
 
 function App() {
+  const [vehicles, setVehicles] = useState([]);
+  const [equipments, setEquipments] = useState([]);
+
+  useEffect(() => {
+    // Set vehicle data
+    setVehicles(vehiclesData);
+
+    // Set equipment data
+    setEquipments(equipmentsData);
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Fleet Management</h1>
+      <VehicleList vehicles={vehicles} />
+      <EquipmentList equipments={equipments} />
     </div>
   );
 }

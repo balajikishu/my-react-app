@@ -1,0 +1,18 @@
+
+.tableStyle  {
+    width: '100%';
+    border-collapse: 'collapse';
+    margin: '10px 0';
+  }
+  
+  
+  .thStyle  {
+    background: 'gray';
+    border-bottom: '1px solid';
+  };
+  
+  .tdStyle {
+    border-bottom: '1px solid';
+    padding: '8px';
+    text-align: 'center';
+  };
